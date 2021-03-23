@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrewDriverSetting", "ScrewDriverSetting\ScrewDriverSetting.csproj", "{F8BDA7E2-4110-4E56-AD78-B98A89A7EABD}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ScrewDriverSetup", "ScrewDriverSetup\ScrewDriverSetup.vdproj", "{C11E5AD4-76A1-44A8-B5A2-B67B1F5BC594}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8BDA7E2-4110-4E56-AD78-B98A89A7EABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8BDA7E2-4110-4E56-AD78-B98A89A7EABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8BDA7E2-4110-4E56-AD78-B98A89A7EABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8BDA7E2-4110-4E56-AD78-B98A89A7EABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C11E5AD4-76A1-44A8-B5A2-B67B1F5BC594}.Debug|Any CPU.ActiveCfg = Debug
+		{C11E5AD4-76A1-44A8-B5A2-B67B1F5BC594}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0F3C32E-E925-41AD-B9E8-E3BBC5CF18CB}
+	EndGlobalSection
+EndGlobal
