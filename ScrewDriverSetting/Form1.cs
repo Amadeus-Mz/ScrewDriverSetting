@@ -57,6 +57,12 @@ namespace ScrewDriverSetting
             MotorStatus = "Stop";
 
             lbMotorStatus.Text = "Stop";
+
+            trBarError.Enabled = false;
+            tboxError.Enabled = false;
+
+            trBarError.Value = 1;
+            tboxError.Text = "1";
         }
 
         private void HideEnable()
@@ -91,6 +97,9 @@ namespace ScrewDriverSetting
                 btn_Dot.Enabled = false;
                 btn_0.Enabled = false;
                 btn_Clear.Enabled = false;
+
+                trBarError.Enabled = false;
+                tboxError.Enabled = false;
             }
             else
             {
@@ -118,6 +127,9 @@ namespace ScrewDriverSetting
                 btn_Dot.Enabled = true;
                 btn_0.Enabled = true;
                 btn_Clear.Enabled = true;
+
+                trBarError.Enabled = true;
+                tboxError.Enabled = true;
             }
         }
 
@@ -869,5 +881,10 @@ namespace ScrewDriverSetting
         }
 
         #endregion
+
+        private void trBarError_Scroll(object sender, EventArgs e)
+        {
+            tboxError.Text = Convert.ToString(trBarError.Value);
+        }
     }
 }
