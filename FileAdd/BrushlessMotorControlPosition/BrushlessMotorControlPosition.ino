@@ -15,6 +15,7 @@ bool swState = 0;
 long int RevSet = 0, TimeSet = 0;
 long int AmpStartSet = 0, AmpEndSet = 0;
 String MotorSet;
+int ErrorSet = 0;
 
 //----------------------------------------------------------------Rx Value
 
@@ -22,8 +23,8 @@ char dataIn;
 String waitProcess, dataAll;
 int CutDataAll;
 
-String strRev, strTime, strAmpStart, strAmpEnd, strMotorStatus;
-String OutRange1, OutRange2, OutRange3, OutRange4;
+String strRev, strTime, strAmpStart, strAmpEnd, strMotorStatus, strError;
+String OutRange1, OutRange2, OutRange3, OutRange4, OutRange5;
 
 //----------------------------------------------------------------Tx Value
 bool stState = 0;
@@ -35,6 +36,7 @@ bool th5_State = 0;
 String TxRev, TxTime;
 String TxMotorStatus = "Stop";
 String TxAmpStart, TxAmpEnd;
+String TxError;
 String TxAll;
 
 String TxRealRev, TxRealTime, TxRealAmp, TxCheck;
@@ -67,6 +69,7 @@ void setup()
   EEPROM.get(10, TimeSet);
   EEPROM.get(20, AmpStartSet);
   EEPROM.get(30, AmpEndSet);
+  EEPROM.get(40, ErrorSet);
 
   attachInterrupt(digitalPinToInterrupt(2), REV, RISING);
 
@@ -107,19 +110,25 @@ void loop()
     {
       MotorSet = strMotorStatus;
     }
+    if (strError != "-")
+    {
+      ErrorSet = strError.toInt();
+    }
 
     TxRev = RevSet;
     TxTime = TimeSet;
     TxAmpStart = AmpStartSet;
     TxAmpEnd = AmpEndSet;
     TxMotorStatus = MotorSet;
+    TxError = ErrorSet;
 
     EEPROM.put(0, RevSet);
     EEPROM.put(10, TimeSet);
     EEPROM.put(20, AmpStartSet);
     EEPROM.put(30, AmpEndSet);
+    EEPROM.put(40, ErrorSet);
 
-    TxAll = TxRev + "/" + TxTime + "/" + TxAmpStart + "/" + TxAmpEnd + "/" + TxMotorStatus + ";";
+    TxAll = TxRev + "/" + TxTime + "/" + TxAmpStart + "/" + TxAmpEnd + "/" + TxMotorStatus + "/" + TxError + ";";
     Serial.print(TxAll);
 
     waitProcess = "";
@@ -218,7 +227,7 @@ void Check()
         TxCheck = "Hole Fit";
         ndState = 1;
       }
-      if (rev >= RevSet && rev <= RevSet + 1 && stState == 0 && Amp >= AmpEndSet)
+      if (rev >= RevSet && rev <= RevSet + ErrorSet && stState == 0 && Amp >= AmpEndSet)
       {
         TxCheck = "OK";
         th4_State = 1;
@@ -334,5 +343,17 @@ String RxMotorStatusData(String dataCut)
   Cut = dataCut.indexOf("/");
   strMotorStatus = dataCut.substring(0, Cut);
 
+  OutRange5 = dataCut.substring(Cut + 1);
+  RxErrorData(OutRange5);
+
   return strMotorStatus;
+}
+
+String RxErrorData(String dataCut)
+{
+  int Cut;
+  Cut = dataCut.indexOf(";");
+  strError = dataCut.substring(0, Cut);
+
+  return strError;
 }
