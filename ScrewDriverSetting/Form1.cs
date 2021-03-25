@@ -19,10 +19,12 @@ namespace ScrewDriverSetting
         string strAmpStart;
         string strAmpEnd;
         string strMotorStatus;
+        string strError;
         string OutRange1;
         string OutRange2;
         string OutRange3;
         string OutRange4;
+        string OutRange5;
 
         #region Main Function
         public Form1()
@@ -179,7 +181,7 @@ namespace ScrewDriverSetting
                 btnRun.Enabled = true;
                 btnStop.Enabled = false;
 
-                serialPort1.Write("-/-/-/-/Stop;");
+                serialPort1.Write("-/-/-/-/Stop/-;");
 
             }
             catch (Exception error)
@@ -209,6 +211,7 @@ namespace ScrewDriverSetting
                 tBoxTxRev.Text = "";
                 tBoxTxTime.Text = "";
                 tBoxTxAmpStart.Text = "";
+                tBoxTxAmpEnd.Text = "";
 
                 tBoxRxRev.Text = "";
                 tBoxRxTime.Text = "";
@@ -508,7 +511,7 @@ namespace ScrewDriverSetting
                 }
                 if (serialPort1.IsOpen)
                 {
-                    waitForSend = tBoxTxRev.Text + "/" + tBoxTxTime.Text + "/" + tBoxTxAmpStart.Text + "/" + tBoxTxAmpEnd.Text + "/" + MotorStatus + ";";
+                    waitForSend = tBoxTxRev.Text + "/" + tBoxTxTime.Text + "/" + tBoxTxAmpStart.Text + "/" + tBoxTxAmpEnd.Text + "/" + MotorStatus + "/" + tboxError.Text + ";";
                     serialPort1.Write(waitForSend);
 
                     tBoxTxRev.Clear(); tBoxTxTime.Clear(); tBoxTxAmpStart.Clear(); tBoxTxAmpEnd.Clear();
@@ -544,7 +547,7 @@ namespace ScrewDriverSetting
                 }
                 if (serialPort1.IsOpen)
                 {
-                    waitForSend = tBoxTxRev.Text + "/" + tBoxTxTime.Text + "/" + tBoxTxAmpStart.Text + "/" + tBoxTxAmpEnd.Text + "/" + MotorStatus + ";";
+                    waitForSend = tBoxTxRev.Text + "/" + tBoxTxTime.Text + "/" + tBoxTxAmpStart.Text + "/" + tBoxTxAmpEnd.Text + "/" + MotorStatus + "/" + tboxError.Text + ";";
                     serialPort1.Write(waitForSend);
 
                     tBoxTxRev.Clear(); tBoxTxTime.Clear(); tBoxTxAmpStart.Clear(); tBoxTxAmpEnd.Clear();
@@ -581,7 +584,7 @@ namespace ScrewDriverSetting
                 }
                 if (serialPort1.IsOpen)
                 {
-                    waitForSend = tBoxTxRev.Text + "/" + tBoxTxTime.Text + "/" + tBoxTxAmpStart.Text + "/" + tBoxTxAmpEnd.Text + "/" + MotorStatus + ";";
+                    waitForSend = tBoxTxRev.Text + "/" + tBoxTxTime.Text + "/" + tBoxTxAmpStart.Text + "/" + tBoxTxAmpEnd.Text + "/" + MotorStatus + "/" + tboxError.Text + ";";
                     serialPort1.Write(waitForSend);
 
                     tBoxTxRev.Clear(); tBoxTxTime.Clear(); tBoxTxAmpStart.Clear(); tBoxTxAmpEnd.Clear();
@@ -618,7 +621,7 @@ namespace ScrewDriverSetting
                 }
                 if (serialPort1.IsOpen)
                 {
-                    waitForSend = tBoxTxRev.Text + "/" + tBoxTxTime.Text + "/" + tBoxTxAmpStart.Text + "/" + tBoxTxAmpEnd.Text + "/" + MotorStatus + ";";
+                    waitForSend = tBoxTxRev.Text + "/" + tBoxTxTime.Text + "/" + tBoxTxAmpStart.Text + "/" + tBoxTxAmpEnd.Text + "/" + MotorStatus + "/" + tboxError.Text + ";";
                     serialPort1.Write(waitForSend);
 
                     tBoxTxRev.Clear(); tBoxTxTime.Clear(); tBoxTxAmpStart.Clear(); tBoxTxAmpEnd.Clear();
@@ -648,7 +651,7 @@ namespace ScrewDriverSetting
             }
             if (serialPort1.IsOpen)
             {
-                waitForSend = tBoxTxRev.Text + "/" + tBoxTxTime.Text + "/" + tBoxTxAmpStart.Text + "/" + tBoxTxAmpEnd.Text + "/" + MotorStatus + ";";
+                waitForSend = tBoxTxRev.Text + "/" + tBoxTxTime.Text + "/" + tBoxTxAmpStart.Text + "/" + tBoxTxAmpEnd.Text + "/" + MotorStatus + "/" + tboxError.Text + ";";
                 serialPort1.Write(waitForSend);
 
                 tBoxTxRev.Clear(); tBoxTxTime.Clear(); tBoxTxAmpStart.Clear(); tBoxTxAmpEnd.Clear();
@@ -660,25 +663,10 @@ namespace ScrewDriverSetting
             btnStop.Enabled = true;
             btnRun.Enabled = false;
             MotorStatus = "Run";
-            if (tBoxTxRev.Text == "")
-            {
-                tBoxTxRev.Text = "-";
-            }
-            if (tBoxTxTime.Text == "")
-            {
-                tBoxTxTime.Text = "-";
-            }
-            if (tBoxTxAmpStart.Text == "")
-            {
-                tBoxTxAmpStart.Text = "-";
-            }
-            if (tBoxTxAmpEnd.Text == "")
-            {
-                tBoxTxAmpEnd.Text = "-";
-            }
+
             if (serialPort1.IsOpen)
             {
-                waitForSend = tBoxTxRev.Text + "/" + tBoxTxTime.Text + "/" + tBoxTxAmpStart.Text + "/" + tBoxTxAmpEnd.Text + "/" + MotorStatus + ";";
+                waitForSend = "-/-/-/-/" + MotorStatus + "/-;";
                 serialPort1.Write(waitForSend);
 
                 tBoxTxRev.Clear(); tBoxTxTime.Clear(); tBoxTxAmpStart.Clear(); tBoxTxAmpEnd.Clear();
@@ -690,25 +678,10 @@ namespace ScrewDriverSetting
             btnStop.Enabled = false;
             btnRun.Enabled = true;
             MotorStatus = "Stop";
-            if (tBoxTxRev.Text == "")
-            {
-                tBoxTxRev.Text = "-";
-            }
-            if (tBoxTxTime.Text == "")
-            {
-                tBoxTxTime.Text = "-";
-            }
-            if (tBoxTxAmpStart.Text == "")
-            {
-                tBoxTxAmpStart.Text = "-";
-            }
-            if (tBoxTxAmpEnd.Text == "")
-            {
-                tBoxTxAmpEnd.Text = "-";
-            }
+
             if (serialPort1.IsOpen)
             {
-                waitForSend = tBoxTxRev.Text + "/" + tBoxTxTime.Text + "/" + tBoxTxAmpStart.Text + "/" + tBoxTxAmpEnd.Text + "/" + MotorStatus + ";";
+                waitForSend = "-/-/-/-/" + MotorStatus + "/-;";
                 serialPort1.Write(waitForSend);
 
                 tBoxTxRev.Clear(); tBoxTxTime.Clear(); tBoxTxAmpStart.Clear(); tBoxTxAmpEnd.Clear();
@@ -731,8 +704,8 @@ namespace ScrewDriverSetting
             {
                 MessageBox.Show("Error : Because Wrong Type DataInput Format \n" +
                     "Please Input Data on Format \n \n" +
-                    "Format : 'Rev/Time/Amp/Status/RealRev/RealTime/RealAmp/PartStatus;'"+
-                    "Ex. '10/1234/2.545/Run/2/30/1.125/GO;' etc.","Error Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    "Format : 'Rev/Time/AmpStart/AmpEnd/Error;'"+
+                    "Ex. '10/1234/10/20/Run/1;' etc.","Error Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -761,6 +734,10 @@ namespace ScrewDriverSetting
             if (strMotorStatus != "-")
             {
                 lbRealMotorStatus.Text = strMotorStatus;
+            }
+            if (strError != "-")
+            {
+                lbError.Text = strError;
             }
         }
 
@@ -820,10 +797,23 @@ namespace ScrewDriverSetting
         {
             int Cut;
 
-            Cut = dataWaitProcess.IndexOf(";");
+            Cut = dataWaitProcess.IndexOf("/");
             strMotorStatus = dataWaitProcess.Substring(0, Cut);
 
+            OutRange5 = dataWaitProcess.Substring(Cut + 1);
+            RxErrorDataCutString(OutRange5);
+
             return strMotorStatus;
+        }
+
+        private string RxErrorDataCutString(string dataWaitProcess)
+        {
+            int Cut;
+
+            Cut = dataWaitProcess.IndexOf(";");
+            strError = dataWaitProcess.Substring(0, Cut);
+
+            return strError;
         }
 
         #endregion
