@@ -177,11 +177,12 @@ namespace ScrewDriverSetting
             // 
             this.lbCommunity.AutoSize = true;
             this.lbCommunity.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCommunity.Location = new System.Drawing.Point(9, 123);
+            this.lbCommunity.Location = new System.Drawing.Point(21, 124);
             this.lbCommunity.Name = "lbCommunity";
             this.lbCommunity.Size = new System.Drawing.Size(163, 36);
             this.lbCommunity.TabIndex = 0;
             this.lbCommunity.Text = "Disconnect";
+            this.lbCommunity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbComport
             // 
@@ -887,12 +888,12 @@ namespace ScrewDriverSetting
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(209, 150);
+            this.label16.Location = new System.Drawing.Point(203, 150);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(61, 20);
+            this.label16.Size = new System.Drawing.Size(73, 20);
             this.label16.TabIndex = 10;
-            this.label16.Text = "% Error";
-            this.toolTip1.SetToolTip(this.label16, "Rev %Error");
+            this.label16.Text = "Error Rev";
+            this.toolTip1.SetToolTip(this.label16, "Error Rev");
             // 
             // label29
             // 
@@ -1169,9 +1170,9 @@ namespace ScrewDriverSetting
             this.label19.ForeColor = System.Drawing.Color.Red;
             this.label19.Location = new System.Drawing.Point(374, 10);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(81, 20);
+            this.label19.Size = new System.Drawing.Size(100, 20);
             this.label19.TabIndex = 13;
-            this.label19.Text = "| %Error :";
+            this.label19.Text = "| Error Rev :";
             this.toolTip1.SetToolTip(this.label19, "Rev %Error");
             // 
             // lbRealMotorStatus
@@ -1205,7 +1206,7 @@ namespace ScrewDriverSetting
             this.lbError.AutoSize = true;
             this.lbError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbError.ForeColor = System.Drawing.Color.White;
-            this.lbError.Location = new System.Drawing.Point(461, 10);
+            this.lbError.Location = new System.Drawing.Point(484, 10);
             this.lbError.Name = "lbError";
             this.lbError.Size = new System.Drawing.Size(18, 20);
             this.lbError.TabIndex = 14;

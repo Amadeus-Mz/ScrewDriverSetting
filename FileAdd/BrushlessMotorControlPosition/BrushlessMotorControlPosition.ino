@@ -10,6 +10,8 @@ int Amp = 0;
 byte Speed = 0;
 bool swState = 0;
 
+bool Trig = 0;
+
 //----------------------------------------------------------------Set Value
 
 long int RevSet = 0, TimeSet = 0;
@@ -172,13 +174,17 @@ void Check()
 
   if (MotorSet == "Run")
   {
-    if (swState == 0)
+    if (swState == 0 && Trig == 0)
     {
       stState = 0;
       ndState = 0;
       rdState = 0;
       Speed = 255;
       analogWrite(EN, Speed);
+    }
+    else if (swState == 1 && Trig == 1)
+    {
+      Trig = 0;
     }
     if (th4_State == 1 && currentMillis_OK - previousMillis_OK >= 2000)
     {
@@ -227,7 +233,7 @@ void Check()
         TxCheck = "Hole Fit";
         ndState = 1;
       }
-      if (rev >= RevSet && rev <= RevSet + ErrorSet && stState == 0 && Amp >= AmpEndSet)
+      if (rev >= RevSet && rev <= ( RevSet + ErrorSet ) && stState == 0 && Amp >= AmpEndSet)
       {
         TxCheck = "OK";
         th4_State = 1;
@@ -237,8 +243,10 @@ void Check()
         Speed = 0;
         analogWrite(EN, Speed);
         stState = 1;
+
+        Trig = 1;
       }
-      if (rev > RevSet + 1 && rdState == 0 && ( Amp < AmpEndSet || Amp >= AmpEndSet))
+      if (rev > ( RevSet + ErrorSet ) && rdState == 0 && ( Amp < AmpEndSet || Amp >= AmpEndSet))
       {
         TxCheck = "BlackHole";
         th5_State = 1;
@@ -248,6 +256,8 @@ void Check()
         Speed = 0;
         analogWrite(EN, Speed);
         rdState = 1;
+
+        Trig = 1;
       }
 
       TxRealRev = rev;
