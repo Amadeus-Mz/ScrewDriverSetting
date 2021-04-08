@@ -25,8 +25,8 @@ char dataIn;
 String waitProcess, dataAll;
 int CutDataAll;
 
-String strRev, strTime, strAmpStart, strAmpEnd, strMotorStatus, strError;
-String OutRange1, OutRange2, OutRange3, OutRange4, OutRange5;
+String strRev, strTime, strAmpEnd, strMotorStatus, strError;
+String OutRange1, OutRange2, OutRange3, OutRange4;
 
 //----------------------------------------------------------------Tx Value
 bool stState = 0;
@@ -69,9 +69,8 @@ void setup()
 
   EEPROM.get(0, RevSet);
   EEPROM.get(10, TimeSet);
-  EEPROM.get(20, AmpStartSet);
-  EEPROM.get(30, AmpEndSet);
-  EEPROM.get(40, ErrorSet);
+  EEPROM.get(20, AmpEndSet);
+  EEPROM.get(30, ErrorSet);
 
   attachInterrupt(digitalPinToInterrupt(2), REV, RISING);
 
@@ -80,7 +79,7 @@ void setup()
     readings[thisReading] = 0;
   }
 
-  Speed = 0;;
+  Speed = 0;
 }
 
 void loop()
@@ -100,10 +99,6 @@ void loop()
     {
       TimeSet = strTime.toInt();
     }
-    if (strAmpStart != "-")
-    {
-      AmpStartSet = strAmpStart.toInt();
-    }
     if (strAmpEnd != "-")
     {
       AmpEndSet = strAmpEnd.toInt();
@@ -119,25 +114,22 @@ void loop()
 
     TxRev = RevSet;
     TxTime = TimeSet;
-    TxAmpStart = AmpStartSet;
     TxAmpEnd = AmpEndSet;
     TxMotorStatus = MotorSet;
     TxError = ErrorSet;
 
     EEPROM.put(0, RevSet);
     EEPROM.put(10, TimeSet);
-    EEPROM.put(20, AmpStartSet);
-    EEPROM.put(30, AmpEndSet);
-    EEPROM.put(40, ErrorSet);
+    EEPROM.put(20, AmpEndSet);
+    EEPROM.put(30, ErrorSet);
 
-    TxAll = TxRev + "/" + TxTime + "/" + TxAmpStart + "/" + TxAmpEnd + "/" + TxMotorStatus + "/" + TxError + ";";
+    TxAll = TxRev + "/" + TxTime + "/" + TxAmpEnd + "/" + TxMotorStatus + "/" + TxError + ";";
     Serial.print(TxAll);
 
     waitProcess = "";
     dataAll = "";
     CutDataAll = 0;
   }
-
   Check();
 }
 
@@ -196,7 +188,7 @@ void Check()
       digitalWrite(NG, 0);
       th5_State = 0;
     }
-    if (Amp < AmpStartSet)
+    if (Amp < 200)
     {
       previousMillis = currentMillis;
       rev = 0;  Count = 0;
@@ -318,21 +310,9 @@ String RxTimeData(String dataCut)
   strTime = dataCut.substring(0, Cut);
 
   OutRange2 = dataCut.substring(Cut + 1);
-  RxAmpStartData(OutRange2);
+  RxAmpEndData(OutRange2);
 
   return strTime;
-}
-
-String RxAmpStartData(String dataCut)
-{
-  int Cut;
-  Cut = dataCut.indexOf("/");
-  strAmpStart = dataCut.substring(0, Cut);
-
-  OutRange3 = dataCut.substring(Cut + 1);
-  RxAmpEndData(OutRange3);
-
-  return strAmpStart;
 }
 
 String RxAmpEndData(String dataCut)
@@ -341,8 +321,8 @@ String RxAmpEndData(String dataCut)
   Cut = dataCut.indexOf("/");
   strAmpEnd = dataCut.substring(0, Cut);
 
-  OutRange4 = dataCut.substring(Cut + 1);
-  RxMotorStatusData(OutRange4);
+  OutRange3 = dataCut.substring(Cut + 1);
+  RxMotorStatusData(OutRange3);
 
   return strAmpEnd;
 }
@@ -353,8 +333,8 @@ String RxMotorStatusData(String dataCut)
   Cut = dataCut.indexOf("/");
   strMotorStatus = dataCut.substring(0, Cut);
 
-  OutRange5 = dataCut.substring(Cut + 1);
-  RxErrorData(OutRange5);
+  OutRange4 = dataCut.substring(Cut + 1);
+  RxErrorData(OutRange4);
 
   return strMotorStatus;
 }

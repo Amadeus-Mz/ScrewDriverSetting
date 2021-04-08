@@ -58,15 +58,12 @@ namespace ScrewDriverSetting
             this.btnRun = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.tBoxRxAmpEnd = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.tBoxRxAmpStart = new System.Windows.Forms.TextBox();
             this.tBoxRxTime = new System.Windows.Forms.TextBox();
             this.tBoxRxRev = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.gBoxNumPad = new System.Windows.Forms.GroupBox();
@@ -86,16 +83,13 @@ namespace ScrewDriverSetting
             this.tboxError = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.trBarError = new System.Windows.Forms.TrackBar();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tBoxTxAmpEnd = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.tBoxTxAmpStart = new System.Windows.Forms.TextBox();
             this.tBoxTxTime = new System.Windows.Forms.TextBox();
             this.tBoxTxRev = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnTxApply = new System.Windows.Forms.Button();
@@ -114,6 +108,7 @@ namespace ScrewDriverSetting
             this.lbError = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -484,22 +479,19 @@ namespace ScrewDriverSetting
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Controls.Add(this.label25);
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.label23);
             this.groupBox3.Controls.Add(this.tBoxRxAmpEnd);
             this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.tBoxRxAmpStart);
             this.groupBox3.Controls.Add(this.tBoxRxTime);
             this.groupBox3.Controls.Add(this.tBoxRxRev);
-            this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(5, 8);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(284, 150);
+            this.groupBox3.Size = new System.Drawing.Size(284, 127);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Status";
@@ -508,21 +500,11 @@ namespace ScrewDriverSetting
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(236, 119);
+            this.label26.Location = new System.Drawing.Point(236, 88);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(32, 20);
             this.label26.TabIndex = 8;
             this.label26.Text = "mA";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(236, 88);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(32, 20);
-            this.label25.TabIndex = 7;
-            this.label25.Text = "mA";
             // 
             // label24
             // 
@@ -551,7 +533,7 @@ namespace ScrewDriverSetting
             this.tBoxRxAmpEnd.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tBoxRxAmpEnd.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBoxRxAmpEnd.ForeColor = System.Drawing.Color.White;
-            this.tBoxRxAmpEnd.Location = new System.Drawing.Point(123, 117);
+            this.tBoxRxAmpEnd.Location = new System.Drawing.Point(123, 86);
             this.tBoxRxAmpEnd.Name = "tBoxRxAmpEnd";
             this.tBoxRxAmpEnd.ReadOnly = true;
             this.tBoxRxAmpEnd.Size = new System.Drawing.Size(100, 25);
@@ -562,25 +544,11 @@ namespace ScrewDriverSetting
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(13, 119);
+            this.label20.Location = new System.Drawing.Point(13, 88);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(71, 20);
+            this.label20.Size = new System.Drawing.Size(41, 20);
             this.label20.TabIndex = 4;
-            this.label20.Text = "Amp End";
-            // 
-            // tBoxRxAmpStart
-            // 
-            this.tBoxRxAmpStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tBoxRxAmpStart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tBoxRxAmpStart.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tBoxRxAmpStart.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxRxAmpStart.ForeColor = System.Drawing.Color.White;
-            this.tBoxRxAmpStart.Location = new System.Drawing.Point(123, 86);
-            this.tBoxRxAmpStart.Name = "tBoxRxAmpStart";
-            this.tBoxRxAmpStart.ReadOnly = true;
-            this.tBoxRxAmpStart.Size = new System.Drawing.Size(100, 25);
-            this.tBoxRxAmpStart.TabIndex = 3;
-            this.tBoxRxAmpStart.TabStop = false;
+            this.label20.Text = "Amp";
             // 
             // tBoxRxTime
             // 
@@ -609,16 +577,6 @@ namespace ScrewDriverSetting
             this.tBoxRxRev.Size = new System.Drawing.Size(100, 25);
             this.tBoxRxRev.TabIndex = 1;
             this.tBoxRxRev.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 88);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 20);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Amp Start";
             // 
             // label10
             // 
@@ -832,28 +790,26 @@ namespace ScrewDriverSetting
             // 
             // gBoxScrewDriverSetting
             // 
+            this.gBoxScrewDriverSetting.Controls.Add(this.label11);
             this.gBoxScrewDriverSetting.Controls.Add(this.tboxError);
             this.gBoxScrewDriverSetting.Controls.Add(this.label30);
             this.gBoxScrewDriverSetting.Controls.Add(this.label16);
-            this.gBoxScrewDriverSetting.Controls.Add(this.label29);
             this.gBoxScrewDriverSetting.Controls.Add(this.trBarError);
             this.gBoxScrewDriverSetting.Controls.Add(this.label28);
             this.gBoxScrewDriverSetting.Controls.Add(this.label27);
             this.gBoxScrewDriverSetting.Controls.Add(this.tBoxTxAmpEnd);
             this.gBoxScrewDriverSetting.Controls.Add(this.label18);
-            this.gBoxScrewDriverSetting.Controls.Add(this.tBoxTxAmpStart);
             this.gBoxScrewDriverSetting.Controls.Add(this.tBoxTxTime);
             this.gBoxScrewDriverSetting.Controls.Add(this.tBoxTxRev);
-            this.gBoxScrewDriverSetting.Controls.Add(this.label12);
             this.gBoxScrewDriverSetting.Controls.Add(this.label13);
             this.gBoxScrewDriverSetting.Controls.Add(this.label14);
             this.gBoxScrewDriverSetting.Controls.Add(this.btnTxApply);
             this.gBoxScrewDriverSetting.Font = new System.Drawing.Font("Segoe UI Semibold", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gBoxScrewDriverSetting.ForeColor = System.Drawing.Color.White;
-            this.gBoxScrewDriverSetting.Location = new System.Drawing.Point(5, 164);
+            this.gBoxScrewDriverSetting.Location = new System.Drawing.Point(5, 141);
             this.gBoxScrewDriverSetting.Name = "gBoxScrewDriverSetting";
             this.gBoxScrewDriverSetting.Padding = new System.Windows.Forms.Padding(5);
-            this.gBoxScrewDriverSetting.Size = new System.Drawing.Size(284, 276);
+            this.gBoxScrewDriverSetting.Size = new System.Drawing.Size(284, 299);
             this.gBoxScrewDriverSetting.TabIndex = 3;
             this.gBoxScrewDriverSetting.TabStop = false;
             this.gBoxScrewDriverSetting.Text = "ScrewDriver Setting";
@@ -865,7 +821,7 @@ namespace ScrewDriverSetting
             this.tboxError.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tboxError.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tboxError.ForeColor = System.Drawing.Color.White;
-            this.tboxError.Location = new System.Drawing.Point(203, 171);
+            this.tboxError.Location = new System.Drawing.Point(123, 120);
             this.tboxError.Name = "tboxError";
             this.tboxError.ReadOnly = true;
             this.tboxError.Size = new System.Drawing.Size(72, 25);
@@ -877,7 +833,7 @@ namespace ScrewDriverSetting
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(234, 122);
+            this.label30.Location = new System.Drawing.Point(234, 91);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(32, 20);
             this.label30.TabIndex = 17;
@@ -888,30 +844,19 @@ namespace ScrewDriverSetting
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(203, 150);
+            this.label16.Location = new System.Drawing.Point(13, 122);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(73, 20);
+            this.label16.Size = new System.Drawing.Size(44, 20);
             this.label16.TabIndex = 10;
-            this.label16.Text = "Error Rev";
+            this.label16.Text = "Error";
             this.toolTip1.SetToolTip(this.label16, "Error Rev");
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(234, 91);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(32, 20);
-            this.label29.TabIndex = 16;
-            this.label29.Text = "mA";
-            this.toolTip1.SetToolTip(this.label29, "Input Data WorkTime");
             // 
             // trBarError
             // 
             this.trBarError.AutoSize = false;
             this.trBarError.Location = new System.Drawing.Point(7, 157);
             this.trBarError.Name = "trBarError";
-            this.trBarError.Size = new System.Drawing.Size(196, 41);
+            this.trBarError.Size = new System.Drawing.Size(269, 41);
             this.trBarError.TabIndex = 9;
             this.trBarError.TickFrequency = 5;
             this.toolTip1.SetToolTip(this.trBarError, "%Error (Default : 1)");
@@ -945,7 +890,7 @@ namespace ScrewDriverSetting
             this.tBoxTxAmpEnd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tBoxTxAmpEnd.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBoxTxAmpEnd.ForeColor = System.Drawing.Color.White;
-            this.tBoxTxAmpEnd.Location = new System.Drawing.Point(123, 120);
+            this.tBoxTxAmpEnd.Location = new System.Drawing.Point(123, 89);
             this.tBoxTxAmpEnd.MaxLength = 8;
             this.tBoxTxAmpEnd.Name = "tBoxTxAmpEnd";
             this.tBoxTxAmpEnd.Size = new System.Drawing.Size(100, 25);
@@ -958,27 +903,12 @@ namespace ScrewDriverSetting
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(13, 122);
+            this.label18.Location = new System.Drawing.Point(13, 91);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(71, 20);
+            this.label18.Size = new System.Drawing.Size(41, 20);
             this.label18.TabIndex = 13;
-            this.label18.Text = "Amp End";
+            this.label18.Text = "Amp";
             this.toolTip1.SetToolTip(this.label18, "Input Data Ampere");
-            // 
-            // tBoxTxAmpStart
-            // 
-            this.tBoxTxAmpStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tBoxTxAmpStart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tBoxTxAmpStart.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxTxAmpStart.ForeColor = System.Drawing.Color.White;
-            this.tBoxTxAmpStart.Location = new System.Drawing.Point(123, 89);
-            this.tBoxTxAmpStart.MaxLength = 8;
-            this.tBoxTxAmpStart.Name = "tBoxTxAmpStart";
-            this.tBoxTxAmpStart.Size = new System.Drawing.Size(100, 25);
-            this.tBoxTxAmpStart.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.tBoxTxAmpStart, "Index Data [ 0-9 ]");
-            this.tBoxTxAmpStart.Click += new System.EventHandler(this.tBoxTxAmp_Click);
-            this.tBoxTxAmpStart.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxTxAmp_KeyPress);
             // 
             // tBoxTxTime
             // 
@@ -1010,17 +940,6 @@ namespace ScrewDriverSetting
             this.toolTip1.SetToolTip(this.tBoxTxRev, "Index Data [ 0-9 ]");
             this.tBoxTxRev.Click += new System.EventHandler(this.tBoxTxRev_Click);
             this.tBoxTxRev.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBoxTxRev_KeyPress);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(13, 91);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(77, 20);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Amp Start";
-            this.toolTip1.SetToolTip(this.label12, "Input Data Ampere");
             // 
             // label13
             // 
@@ -1170,9 +1089,9 @@ namespace ScrewDriverSetting
             this.label19.ForeColor = System.Drawing.Color.Red;
             this.label19.Location = new System.Drawing.Point(374, 10);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(100, 20);
+            this.label19.Size = new System.Drawing.Size(102, 20);
             this.label19.TabIndex = 13;
-            this.label19.Text = "| Error Rev :";
+            this.label19.Text = "| Error Deg :";
             this.toolTip1.SetToolTip(this.label19, "Rev %Error");
             // 
             // lbRealMotorStatus
@@ -1231,6 +1150,17 @@ namespace ScrewDriverSetting
             this.label22.Size = new System.Drawing.Size(169, 17);
             this.label22.TabIndex = 11;
             this.label22.Text = "[TGT] ScrewDriverSetting";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(234, 122);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(37, 20);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Deg";
+            this.toolTip1.SetToolTip(this.label11, "Input Data WorkTime");
             // 
             // Form1
             // 
@@ -1311,16 +1241,12 @@ namespace ScrewDriverSetting
         private System.Windows.Forms.Button btn_3;
         private System.Windows.Forms.Button btn_2;
         private System.Windows.Forms.Button btn_1;
-        private System.Windows.Forms.TextBox tBoxRxAmpStart;
         private System.Windows.Forms.TextBox tBoxRxTime;
         private System.Windows.Forms.TextBox tBoxRxRev;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tBoxTxAmpStart;
         private System.Windows.Forms.TextBox tBoxTxTime;
         private System.Windows.Forms.TextBox tBoxTxRev;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnTxApply;
@@ -1348,11 +1274,9 @@ namespace ScrewDriverSetting
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -1361,6 +1285,7 @@ namespace ScrewDriverSetting
         private System.Windows.Forms.TrackBar trBarError;
         private System.Windows.Forms.Label lbError;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label11;
     }
 }
 
