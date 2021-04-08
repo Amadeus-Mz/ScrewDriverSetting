@@ -177,7 +177,7 @@ namespace ScrewDriverSetting
                 btnRun.Enabled = true;
                 btnStop.Enabled = false;
 
-                serialPort1.Write("-/-/-/-/Stop/-;");
+                serialPort1.Write("-/-/-/Stop/-;");
 
             }
             catch (Exception error)
