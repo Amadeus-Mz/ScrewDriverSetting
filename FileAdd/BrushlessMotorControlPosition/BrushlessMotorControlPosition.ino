@@ -4,7 +4,7 @@
 const int EN = 5;
 const int SW = 4;
 
-int Count = 0, rev = 0;
+int Count = 0, CountRev = 0, degree = 0, rev = 0;
 unsigned long currentMillis = 0, previousMillis = 0;
 int Amp = 0;
 byte Speed = 0;
@@ -14,7 +14,7 @@ bool Trig = 0;
 
 //----------------------------------------------------------------Set Value
 
-long int RevSet = 0, TimeSet = 0;
+long int DegreeSet = 0, TimeSet = 0;
 long int AmpStartSet = 0, AmpEndSet = 0;
 String MotorSet;
 int ErrorSet = 0;
@@ -25,7 +25,7 @@ char dataIn;
 String waitProcess, dataAll;
 int CutDataAll;
 
-String strRev, strTime, strAmpEnd, strMotorStatus, strError;
+String strDegree, strTime, strAmpEnd, strMotorStatus, strError;
 String OutRange1, OutRange2, OutRange3, OutRange4;
 
 //----------------------------------------------------------------Tx Value
@@ -35,13 +35,13 @@ bool rdState = 0;
 bool th4_State = 0;
 bool th5_State = 0;
 
-String TxRev, TxTime;
+String TxDegree, TxTime;
 String TxMotorStatus = "Stop";
 String TxAmpStart, TxAmpEnd;
 String TxError;
 String TxAll;
 
-String TxRealRev, TxRealTime, TxRealAmp, TxCheck;
+String TxRealRev, TxRealDegree, TxRealTime, TxRealAmp, TxCheck;
 
 const int OK = 22, NG = 23;
 unsigned long currentMillis_OK = 0, previousMillis_OK = 0;
@@ -67,12 +67,12 @@ void setup()
   pinMode(EN, OUTPUT);
   pinMode(LED_BUILTIN, OUTPUT);
 
-  EEPROM.get(0, RevSet);
+  EEPROM.get(0, DegreeSet);
   EEPROM.get(10, TimeSet);
   EEPROM.get(20, AmpEndSet);
   EEPROM.get(30, ErrorSet);
 
-  attachInterrupt(digitalPinToInterrupt(2), REV, RISING);
+  attachInterrupt(digitalPinToInterrupt(2), Degree, RISING);
 
   for (int thisReading = 0; thisReading < numReadings; thisReading++)
   {
@@ -91,9 +91,9 @@ void loop()
 
   if (CutDataAll > 0 )
   {
-    if (strRev != "-")
+    if (strDegree != "-")
     {
-      RevSet = strRev.toInt();
+      DegreeSet = strDegree.toInt();
     }
     if (strTime != "-")
     {
@@ -112,18 +112,18 @@ void loop()
       ErrorSet = strError.toInt();
     }
 
-    TxRev = RevSet;
+    TxDegree = DegreeSet;
     TxTime = TimeSet;
     TxAmpEnd = AmpEndSet;
     TxMotorStatus = MotorSet;
     TxError = ErrorSet;
 
-    EEPROM.put(0, RevSet);
+    EEPROM.put(0, DegreeSet);
     EEPROM.put(10, TimeSet);
     EEPROM.put(20, AmpEndSet);
     EEPROM.put(30, ErrorSet);
 
-    TxAll = TxRev + "/" + TxTime + "/" + TxAmpEnd + "/" + TxMotorStatus + "/" + TxError + ";";
+    TxAll = TxDegree + "/" + TxTime + "/" + TxAmpEnd + "/" + TxMotorStatus + "/" + TxError + ";";
     Serial.print(TxAll);
 
     waitProcess = "";
@@ -148,13 +148,20 @@ void RealAmp()
   Amp = map(average, 0, 500, 0, 100000);
 }
 
-void REV()
+void Degree()
 {
   Count++;
-  if (Count >= 10)
+  CountRev++;
+  
+  if (Count >= 1)
+  {
+    degree += 36;
+    Count = 0;
+  }
+  if (CountRev >= 10)
   {
     rev++;
-    Count = 0;
+    CountRev = 0;
   }
 }
 
@@ -188,17 +195,20 @@ void Check()
       digitalWrite(NG, 0);
       th5_State = 0;
     }
-    if (Amp < 200)
+    if (Amp < 800)
     {
       previousMillis = currentMillis;
-      rev = 0;  Count = 0;
+      rev = 0;  degree = 0;  Count = 0;
       TxRealRev = rev;
+      TxRealDegree = degree;
       TxRealTime = "0";
       TxRealAmp = Amp;
 
       Serial1.print(TxAll);
       Serial1.print("\t");
       Serial1.print(TxRealRev);
+      Serial1.print("\t");
+      Serial1.print(TxRealDegree);
       Serial1.print("\t");
       Serial1.print(TxRealTime);
       Serial1.print("\t");
@@ -207,6 +217,7 @@ void Check()
     else if (currentMillis - previousMillis < TimeSet && (Amp >= AmpStartSet && Amp < AmpEndSet))
     {
       TxRealRev = rev;
+      TxRealDegree = degree;
       TxRealTime = currentMillis - previousMillis;
       TxRealAmp = Amp;
 
@@ -214,18 +225,20 @@ void Check()
       Serial1.print("\t");
       Serial1.print(TxRealRev);
       Serial1.print("\t");
+      Serial1.print(TxRealDegree);
+      Serial1.print("\t");
       Serial1.print(TxRealTime);
       Serial1.print("\t");
       Serial1.println(TxRealAmp);
     }
     else if ((currentMillis - previousMillis >= TimeSet ) || Amp >= AmpEndSet)
     {
-      if (rev <= RevSet && ndState == 0 && Amp >= AmpEndSet)
+      if (degree <= DegreeSet && ndState == 0 && Amp >= AmpEndSet)
       {
         TxCheck = "Hole Fit";
         ndState = 1;
       }
-      if (rev >= RevSet && rev <= ( RevSet + ErrorSet ) && stState == 0 && Amp >= AmpEndSet)
+      if (degree >= DegreeSet && degree <= ( DegreeSet + ErrorSet ) && stState == 0 && Amp >= AmpEndSet)
       {
         TxCheck = "OK";
         th4_State = 1;
@@ -238,7 +251,7 @@ void Check()
 
         Trig = 1;
       }
-      if (rev > ( RevSet + ErrorSet ) && rdState == 0 && ( Amp < AmpEndSet || Amp >= AmpEndSet))
+      if (degree > ( DegreeSet + ErrorSet ) && rdState == 0 && (Amp < AmpEndSet || Amp >= AmpEndSet))
       {
         TxCheck = "BlackHole";
         th5_State = 1;
@@ -253,12 +266,15 @@ void Check()
       }
 
       TxRealRev = rev;
+      TxRealDegree = degree;
       TxRealTime = currentMillis - previousMillis;
       TxRealAmp = Amp;
 
       Serial1.print(TxAll);
       Serial1.print("\t");
       Serial1.print(TxRealRev);
+      Serial1.print("\t");
+      Serial1.print(TxRealDegree);
       Serial1.print("\t");
       Serial1.print(TxRealTime);
       Serial1.print("\t");
@@ -272,7 +288,7 @@ void Check()
     previousMillis = currentMillis;
     Speed = 0;
     analogWrite(EN, Speed);
-    rev = 0;    Count = 0;
+    rev = 0;  degree = 0;    Count = 0;
   }
 }
 
@@ -286,21 +302,21 @@ String RxDataAll()
   }
 
   dataAll = waitProcess.substring(0, CutDataAll);
-  RxRevData(dataAll);
+  RxDegreeData(dataAll);
 
   return dataAll;
 }
 
-String RxRevData(String dataCut)
+String RxDegreeData(String dataCut)
 {
   int Cut;
   Cut = dataCut.indexOf("/");
-  strRev = dataCut.substring(0, Cut);
+  strDegree = dataCut.substring(0, Cut);
 
   OutRange1 = dataCut.substring(Cut + 1);
   RxTimeData(OutRange1);
 
-  return strRev;
+  return strDegree;
 }
 
 String RxTimeData(String dataCut)

@@ -61,8 +61,8 @@ namespace ScrewDriverSetting
             trBarError.Enabled = false;
             tboxError.Enabled = false;
 
-            trBarError.Value = 1;
-            tboxError.Text = "1";
+            trBarError.Value = 360;
+            tboxError.Text = "360";
         }
 
         private void HideEnable()
@@ -208,9 +208,9 @@ namespace ScrewDriverSetting
                 tBoxTxTime.Text = "";
                 tBoxTxAmpEnd.Text = "";
 
-                tBoxRxRev.Text = "";
-                tBoxRxTime.Text = "";
-                tBoxRxAmpEnd.Text = "";
+                tBoxRxRev.Text = "0";
+                tBoxRxTime.Text = "0";
+                tBoxRxAmpEnd.Text = "0";
 
             }
         }
@@ -591,7 +591,7 @@ namespace ScrewDriverSetting
 
             if (serialPort1.IsOpen)
             {
-                waitForSend = "-/-/-/" + MotorStatus + "/-;";
+                waitForSend = "-/-/-/" + MotorStatus + "/" + tboxError.Text + ";";
                 serialPort1.Write(waitForSend);
 
                 tBoxTxRev.Clear(); tBoxTxTime.Clear(); tBoxTxAmpEnd.Clear();
