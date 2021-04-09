@@ -770,7 +770,7 @@ namespace ScrewDriverSetting
                 System.IO.StreamWriter file = new System.IO.StreamWriter(saveFileDialog1.FileName.ToString());
                 NowDate = Convert.ToString(DateTime.Now.Day) + "/" + Convert.ToString(DateTime.Now.Month) + "/" + Convert.ToString(DateTime.Now.Year);
                 NowTime = Convert.ToString(DateTime.Now.Hour) + ":" + Convert.ToString(DateTime.Now.Minute) + ":" + Convert.ToString(DateTime.Now.Second);
-                DataSaveAll = "DateSetting :  "+ NowDate + "  " + NowTime + "\nRevSet :  " + tBoxRxRev.Text + "\nTimeSet :  " + tBoxRxTime.Text + "\nAmpEndSet  " + tBoxRxAmpEnd.Text;
+                DataSaveAll = "DateSetting :  "+ NowDate + "  " + NowTime + "\nDegreeSet :  " + tBoxRxRev.Text + "\nTimeSet :  " + tBoxRxTime.Text + "\nAmpEndSet  " + tBoxRxAmpEnd.Text;
                 file.WriteLine(DataSaveAll);
                 file.Close();
             }

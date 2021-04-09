@@ -15,7 +15,7 @@ bool Trig = 0;
 //----------------------------------------------------------------Set Value
 
 long int DegreeSet = 0, TimeSet = 0;
-long int AmpStartSet = 0, AmpEndSet = 0;
+long int AmpStartSet = 400, AmpEndSet = 0;
 String MotorSet;
 int ErrorSet = 0;
 
@@ -37,7 +37,7 @@ bool th5_State = 0;
 
 String TxDegree, TxTime;
 String TxMotorStatus = "Stop";
-String TxAmpStart, TxAmpEnd;
+String TxAmpEnd;
 String TxError;
 String TxAll;
 
@@ -195,7 +195,7 @@ void Check()
       digitalWrite(NG, 0);
       th5_State = 0;
     }
-    if (Amp < 800)
+    if (Amp < AmpStartSet)
     {
       previousMillis = currentMillis;
       rev = 0;  degree = 0;  Count = 0;

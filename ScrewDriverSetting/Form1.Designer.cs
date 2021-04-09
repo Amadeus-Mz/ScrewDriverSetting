@@ -435,7 +435,7 @@ namespace ScrewDriverSetting
             this.lbMotorStatus.AutoSize = true;
             this.lbMotorStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMotorStatus.ForeColor = System.Drawing.Color.Yellow;
-            this.lbMotorStatus.Location = new System.Drawing.Point(141, 113);
+            this.lbMotorStatus.Location = new System.Drawing.Point(141, 108);
             this.lbMotorStatus.Name = "lbMotorStatus";
             this.lbMotorStatus.Size = new System.Drawing.Size(65, 29);
             this.lbMotorStatus.TabIndex = 0;
@@ -445,7 +445,7 @@ namespace ScrewDriverSetting
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 118);
+            this.label7.Location = new System.Drawing.Point(13, 113);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 23);
             this.label7.TabIndex = 0;
@@ -883,13 +883,12 @@ namespace ScrewDriverSetting
             this.trBarError.AutoSize = false;
             this.trBarError.LargeChange = 36;
             this.trBarError.Location = new System.Drawing.Point(7, 162);
-            this.trBarError.Maximum = 720;
+            this.trBarError.Maximum = 1440;
             this.trBarError.Name = "trBarError";
             this.trBarError.Size = new System.Drawing.Size(269, 41);
-            this.trBarError.SmallChange = 36;
             this.trBarError.TabIndex = 9;
-            this.trBarError.TickFrequency = 72;
-            this.toolTip1.SetToolTip(this.trBarError, "%Error Degree (Default : 360)");
+            this.trBarError.TickFrequency = 144;
+            this.toolTip1.SetToolTip(this.trBarError, "Error Degree (Default : 360)");
             this.trBarError.Scroll += new System.EventHandler(this.trBarError_Scroll);
             // 
             // label28
