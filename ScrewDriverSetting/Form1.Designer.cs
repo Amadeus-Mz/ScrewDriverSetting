@@ -873,9 +873,9 @@ namespace ScrewDriverSetting
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(13, 122);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(44, 20);
+            this.label16.Size = new System.Drawing.Size(73, 20);
             this.label16.TabIndex = 10;
-            this.label16.Text = "Error";
+            this.label16.Text = "tolerance";
             this.toolTip1.SetToolTip(this.label16, "Error Degree");
             // 
             // trBarError
@@ -1121,9 +1121,9 @@ namespace ScrewDriverSetting
             this.label19.ForeColor = System.Drawing.Color.Red;
             this.label19.Location = new System.Drawing.Point(374, 10);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(102, 20);
+            this.label19.Size = new System.Drawing.Size(133, 20);
             this.label19.TabIndex = 13;
-            this.label19.Text = "| Error Deg :";
+            this.label19.Text = "| tolerance Deg :";
             this.toolTip1.SetToolTip(this.label19, "Error Degree");
             // 
             // lbRealMotorStatus
@@ -1157,7 +1157,7 @@ namespace ScrewDriverSetting
             this.lbError.AutoSize = true;
             this.lbError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbError.ForeColor = System.Drawing.Color.White;
-            this.lbError.Location = new System.Drawing.Point(484, 10);
+            this.lbError.Location = new System.Drawing.Point(516, 10);
             this.lbError.Name = "lbError";
             this.lbError.Size = new System.Drawing.Size(36, 20);
             this.lbError.TabIndex = 14;

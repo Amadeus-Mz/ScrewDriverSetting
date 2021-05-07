@@ -15,44 +15,44 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_2A57031B50FC42A598F1785D87AD154B"
+        "MsmKey" = "8:_6CA7C5046F674BBD8532715531ABA521"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_321745DA65AB44039EA2CD0EFD1717C0"
+        "MsmKey" = "8:_7936F5B876614933B0D7595507A6703F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_39F9E131281F4B09990275C5B5D1C533"
+        "MsmKey" = "8:_7A4BAEDCFE8C40FDAA03849E11C35766"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_4DE5C716876F41088E7F71BEC91BF8AE"
+        "MsmKey" = "8:_A0F9AB232F9347268B3EC6C8A02E5FE6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_991381BA6C83443598B3EDA7E73EBDE8"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D40B54FFEBE14FEA87AADAF880E3C425"
+        "MsmKey" = "8:_D6FCF70711EF4E43A96FEDBC2E5C7E5C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_DFC4DD0F9C051820B9CF9510D00F9567"
-        "OwnerKey" = "8:_991381BA6C83443598B3EDA7E73EBDE8"
+        "OwnerKey" = "8:_7936F5B876614933B0D7595507A6703F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F1286EF8F8234D6999ED4142581B7376"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -64,7 +64,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_991381BA6C83443598B3EDA7E73EBDE8"
+        "OwnerKey" = "8:_7936F5B876614933B0D7595507A6703F"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -85,6 +85,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -101,6 +109,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -130,69 +146,9 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2A57031B50FC42A598F1785D87AD154B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6CA7C5046F674BBD8532715531ABA521"
             {
-            "SourcePath" = "8:..\\..\\New folder\\screwdriver@3x.png"
-            "TargetName" = "8:screwdriver@3x.png"
-            "Tag" = "8:"
-            "Folder" = "8:_40311421105747378F5EC5E0A0C7F36D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_321745DA65AB44039EA2CD0EFD1717C0"
-            {
-            "SourcePath" = "8:..\\..\\New folder\\ScrewDriver.pdf"
-            "TargetName" = "8:ScrewDriver.pdf"
-            "Tag" = "8:"
-            "Folder" = "8:_40311421105747378F5EC5E0A0C7F36D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_39F9E131281F4B09990275C5B5D1C533"
-            {
-            "SourcePath" = "8:..\\..\\New folder\\Readme -PortArduino-.txt"
-            "TargetName" = "8:Readme -PortArduino-.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_40311421105747378F5EC5E0A0C7F36D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4DE5C716876F41088E7F71BEC91BF8AE"
-            {
-            "SourcePath" = "8:..\\..\\New folder\\screwdriver_3x_59l_icon.ico"
+            "SourcePath" = "8:..\\FileAdd\\screwdriver_3x_59l_icon.ico"
             "TargetName" = "8:screwdriver_3x_59l_icon.ico"
             "Tag" = "8:"
             "Folder" = "8:_40311421105747378F5EC5E0A0C7F36D"
@@ -210,10 +166,50 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D40B54FFEBE14FEA87AADAF880E3C425"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A4BAEDCFE8C40FDAA03849E11C35766"
             {
-            "SourcePath" = "8:..\\..\\New folder\\123456.png"
+            "SourcePath" = "8:..\\FileAdd\\screwdriver@3x.png"
+            "TargetName" = "8:screwdriver@3x.png"
+            "Tag" = "8:"
+            "Folder" = "8:_40311421105747378F5EC5E0A0C7F36D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A0F9AB232F9347268B3EC6C8A02E5FE6"
+            {
+            "SourcePath" = "8:..\\FileAdd\\123456.png"
             "TargetName" = "8:123456.png"
+            "Tag" = "8:"
+            "Folder" = "8:_40311421105747378F5EC5E0A0C7F36D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D6FCF70711EF4E43A96FEDBC2E5C7E5C"
+            {
+            "SourcePath" = "8:..\\FileAdd\\Readme -PortArduino-.txt"
+            "TargetName" = "8:Readme -PortArduino-.txt"
             "Tag" = "8:"
             "Folder" = "8:_40311421105747378F5EC5E0A0C7F36D"
             "Condition" = "8:"
@@ -259,6 +255,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F1286EF8F8234D6999ED4142581B7376"
+            {
+            "SourcePath" = "8:..\\FileAdd\\ScrewDriver.pdf"
+            "TargetName" = "8:ScrewDriver.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_40311421105747378F5EC5E0A0C7F36D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -346,7 +362,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:ScrewDriverSetting"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:_4DE5C716876F41088E7F71BEC91BF8AE"
+        "ARPPRODUCTICON" = "8:_6CA7C5046F674BBD8532715531ABA521"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -449,21 +465,35 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_00692A0C97E4440887A4F9D7D1047E18"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5DD94CD675004D638887667D2929C86A"
             {
-            "Name" = "8:Readme -PortArduino-"
+            "Name" = "8:ScrewDriverSetting"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_39F9E131281F4B09990275C5B5D1C533"
-            "Folder" = "8:_2F876AE1E0124E6AB1880A6181A622A8"
+            "Target" = "8:_7936F5B876614933B0D7595507A6703F"
+            "Folder" = "8:_410F502281144E589E26CD6BFD91AE10"
             "WorkingFolder" = "8:_40311421105747378F5EC5E0A0C7F36D"
-            "Icon" = "8:"
+            "Icon" = "8:_6CA7C5046F674BBD8532715531ABA521"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8C85CC7A99834B0B86E58D3D5250292B"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_77D6CF7B407747AAA1E2B79E4F943A94"
+            {
+            "Name" = "8:ScrewDriverSetting"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_7936F5B876614933B0D7595507A6703F"
+            "Folder" = "8:_F21F67C14B1546E48E7D23C9C425981A"
+            "WorkingFolder" = "8:_40311421105747378F5EC5E0A0C7F36D"
+            "Icon" = "8:_6CA7C5046F674BBD8532715531ABA521"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7F93E8FE6D464ECD9869B04DFE5F507E"
             {
             "Name" = "8:ScrewDriver.pdf"
             "Arguments" = "8:"
@@ -471,38 +501,24 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_321745DA65AB44039EA2CD0EFD1717C0"
+            "Target" = "8:_F1286EF8F8234D6999ED4142581B7376"
             "Folder" = "8:_2F876AE1E0124E6AB1880A6181A622A8"
             "WorkingFolder" = "8:_40311421105747378F5EC5E0A0C7F36D"
             "Icon" = "8:"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B0A71E9A9B55454C9EAC73C9E0A593D2"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CF43AC2715524CBDB89311E923E474A2"
             {
-            "Name" = "8:ScrewDriverSetting"
+            "Name" = "8:Readme -PortArduino-"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_991381BA6C83443598B3EDA7E73EBDE8"
-            "Folder" = "8:_F21F67C14B1546E48E7D23C9C425981A"
+            "Target" = "8:_D6FCF70711EF4E43A96FEDBC2E5C7E5C"
+            "Folder" = "8:_2F876AE1E0124E6AB1880A6181A622A8"
             "WorkingFolder" = "8:_40311421105747378F5EC5E0A0C7F36D"
-            "Icon" = "8:_4DE5C716876F41088E7F71BEC91BF8AE"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FA86664CC2E047DCBDCA671C1843C665"
-            {
-            "Name" = "8:ScrewDriverSetting"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_991381BA6C83443598B3EDA7E73EBDE8"
-            "Folder" = "8:_410F502281144E589E26CD6BFD91AE10"
-            "WorkingFolder" = "8:_40311421105747378F5EC5E0A0C7F36D"
-            "Icon" = "8:_4DE5C716876F41088E7F71BEC91BF8AE"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }
@@ -904,7 +920,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_991381BA6C83443598B3EDA7E73EBDE8"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_7936F5B876614933B0D7595507A6703F"
             {
             "SourcePath" = "8:..\\ScrewDriverSetting\\obj\\Debug\\ScrewDriverSetting.exe"
             "TargetName" = "8:"
